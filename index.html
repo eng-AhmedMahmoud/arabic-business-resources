@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>مصادر عربية مجانية — مصطلحات الأعمال والاستثمار · Free Arabic Business & Investment Resources</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    /* Devya black/silver system — matches devya-solutions/styles/globals.css */
+    --ink-950:#050506;--ink-900:#08090a;--ink-800:#0f1012;--ink-700:#16181b;
+    --line:rgba(255,255,255,.06);--line-strong:rgba(255,255,255,.14);
+    --text:#eef0f3;--muted:#828892;--faint:#45494f;
+    --brand:#D6DCE4;--brand-2:#B8C0CB;--accent:#D6DCE4;
+    --gold:#f5f5f5;--gold-line:rgba(255,255,255,.35);--gold-bg:rgba(255,255,255,.05);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'Cairo','Sora',system-ui,sans-serif;
+    background:
+      radial-gradient(1100px 600px at 88% -8%, rgba(255,255,255,.05), transparent 60%),
+      radial-gradient(900px 560px at 2% 8%, rgba(214,220,228,.05), transparent 55%),
+      var(--ink-950);
+    color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased;padding:40px 20px 80px;
+  }
+  .wrap{max-width:1040px;margin:0 auto;}
+  /* lang views */
+  [data-view]{display:none;}
+  body.lang-ar [data-view="ar"]{display:block;}
+  body.lang-en [data-view="en"]{display:block;}
+  body.lang-en{direction:ltr;font-family:'Sora',system-ui,sans-serif;}
+  body.lang-en [data-view="en"]{text-align:left;}
+  /* toggle */
+  .langbar{display:flex;justify-content:flex-end;gap:8px;margin-bottom:22px;}
+  .langbtn{font-family:'Sora',sans-serif;font-size:12.5px;font-weight:600;cursor:pointer;
+    background:rgba(255,255,255,.04);border:1px solid var(--line-strong);color:var(--muted);
+    border-radius:999px;padding:6px 16px;transition:all .15s ease;}
+  .langbtn:hover{color:var(--text);}
+  .langbtn.active{background:linear-gradient(135deg,#fff,var(--brand-2));color:var(--ink-900);border-color:transparent;}
+  /* filters */
+  .filters{display:flex;flex-wrap:wrap;gap:16px;margin:20px 0 4px;padding:14px 18px;
+    background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:14px;}
+  .fgroup{display:flex;flex-wrap:wrap;gap:6px;align-items:center;}
+  .fgroup .flabel{font-family:'Sora',sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--faint);margin-inline-end:4px;}
+  .fbtn{font-family:'Sora',sans-serif;font-size:11.5px;font-weight:600;cursor:pointer;
+    background:rgba(255,255,255,.04);border:1px solid var(--line-strong);color:var(--muted);
+    border-radius:999px;padding:4px 12px;transition:all .15s ease;}
+  .fbtn:hover{color:var(--text);}
+  .fbtn.active{background:linear-gradient(135deg,#fff,var(--brand-2));color:var(--ink-900);border-color:transparent;}
+  /* header */
+  header{border-bottom:1px solid var(--line);padding-bottom:22px;margin-bottom:14px;}
+  .brand-row{display:flex;align-items:center;gap:14px;margin-bottom:16px;}
+  .logo{width:44px;height:44px;border-radius:12px;overflow:hidden;flex-shrink:0;
+    box-shadow:0 8px 24px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.08);}
+  .logo svg{display:block;width:100%;height:100%;}
+  .brand-name{font-size:22px;font-weight:700;font-family:'Sora',sans-serif;letter-spacing:-.02em;}
+  .brand-sub{font-size:12.5px;color:var(--muted);}
+  h1{font-size:25px;font-weight:700;letter-spacing:-.01em;margin-bottom:8px;}
+  .lede{font-size:15px;color:var(--muted);max-width:760px;}
+  .lede em{color:var(--accent);font-style:normal;font-weight:600;}
+  .verified{font-family:'Sora',sans-serif;font-size:12px;margin-top:14px;
+    display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.05);
+    border:1px solid rgba(214,220,228,.25);border-radius:999px;padding:5px 13px;color:var(--accent);}
+  .legend{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;}
+  .tag{font-size:11px;font-weight:600;border-radius:999px;padding:3px 10px;border:1px solid var(--line-strong);color:var(--muted);font-family:'Sora',sans-serif;}
+  .tag.msa{color:var(--text);border-color:rgba(238,240,243,.35);}
+  .tag.amiya{color:var(--muted);border-color:rgba(130,136,146,.4);}
+  .tag.free{color:var(--accent);border-color:rgba(214,220,228,.4);}
+  .tag.tool{color:var(--brand-2);border-color:rgba(184,192,203,.4);}
+  .tag.new{color:var(--ink-900);border-color:transparent;background:linear-gradient(135deg,#fff,var(--brand-2));font-weight:700;}
+  /* sections */
+  section{margin-top:36px;}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:'Sora',sans-serif;
+    font-size:11.5px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:var(--brand);margin-bottom:14px;}
+  .eyebrow::before{content:"";width:22px;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--brand),transparent);}
+  body.lang-ar .eyebrow::before{background:linear-gradient(270deg,var(--brand),transparent);}
+  .sec-note{font-size:13.5px;color:var(--muted);margin:-6px 0 18px;max-width:780px;}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
+  .card{background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.015));
+    border:1px solid var(--line);border-radius:18px;padding:20px 22px;
+    display:flex;flex-direction:column;gap:9px;transition:transform .15s ease,border-color .15s ease;}
+  .card:hover{transform:translateY(-2px);border-color:var(--line-strong);}
+  .card .name{font-size:16.5px;font-weight:700;color:var(--text);}
+  .card .name .en{font-size:12.5px;font-weight:500;color:var(--faint);font-family:'Sora',sans-serif;display:block;margin-top:1px;}
+  .card .tags{display:flex;flex-wrap:wrap;gap:6px;}
+  .card .tags .tag{font-size:9.5px;padding:2px 8px;}
+  .card .date{font-family:'Sora',sans-serif;font-size:11px;color:var(--faint);display:inline-flex;align-items:center;gap:6px;}
+  .card .date b{color:var(--muted);font-weight:600;}
+  .card .date.warn{color:var(--gold);}
+  .card .desc{font-size:13.5px;color:var(--muted);}
+  .card .why{font-size:12.5px;color:var(--text);}
+  .card .why b{color:var(--accent);font-weight:600;}
+  .card a.go{margin-top:auto;font-family:'Sora',sans-serif;font-size:12.5px;font-weight:600;color:var(--brand);
+    text-decoration:none;display:inline-flex;align-items:center;gap:6px;direction:ltr;word-break:break-all;}
+  body.lang-ar .card a.go,body.lang-ar .card .subs a{justify-content:flex-start;}
+  .card a.go:hover{color:var(--brand-2);}
+  .card .subs{display:flex;flex-direction:column;gap:4px;margin-top:2px;}
+  .card .subs a{font-family:'Sora',sans-serif;font-size:11.5px;color:var(--faint);text-decoration:none;direction:ltr;word-break:break-all;}
+  .card .subs a:hover{color:var(--muted);}
+  /* caveats + tips */
+  .caveats{margin-top:44px;background:var(--gold-bg);border:1px dashed var(--gold-line);border-radius:18px;padding:24px 26px;}
+  .caveats h2{font-size:16px;color:var(--gold);font-family:'Sora',sans-serif;margin-bottom:12px;}
+  .caveats ul{list-style:none;display:grid;gap:10px;}
+  .caveats li{font-size:13.5px;color:var(--text);position:relative;}
+  body.lang-ar .caveats li{padding-right:22px;}
+  body.lang-en .caveats li{padding-left:22px;}
+  body.lang-ar .caveats li::before{content:"▸";position:absolute;right:0;color:var(--gold);font-size:11px;top:3px;}
+  body.lang-en .caveats li::before{content:"▸";position:absolute;left:0;color:var(--gold);font-size:11px;top:3px;}
+  .caveats li b{color:var(--gold);font-weight:600;}
+  .tips{margin-top:20px;background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:18px;padding:24px 26px;}
+  .tips h2{font-size:16px;font-family:'Sora',sans-serif;margin-bottom:12px;}
+  .tips ol{display:grid;gap:9px;}
+  body.lang-ar .tips ol{margin-right:18px;}
+  body.lang-en .tips ol{margin-left:18px;}
+  .tips li{font-size:13.5px;color:var(--muted);}
+  .tips li b{color:var(--text);font-weight:600;}
+  footer{margin-top:44px;padding-top:20px;border-top:1px solid var(--line);
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:12px;color:var(--faint);font-family:'Sora',sans-serif;direction:ltr;}
+  footer a{color:var(--muted);text-decoration:none;}
+  @media(max-width:720px){.grid{grid-template-columns:1fr;}body{padding:28px 14px 60px;}}
+</style>
+</head>
+<body class="lang-ar">
+<div class="wrap">
+
+  <div class="langbar">
+    <button class="langbtn active" data-lang="ar" onclick="setLang('ar')">العربية</button>
+    <button class="langbtn" data-lang="en" onclick="setLang('en')">English</button>
+  </div>
+
+  <!-- ==================== ARABIC VIEW ==================== -->
+  <div data-view="ar">
+    <header>
+      <div class="brand-row">
+        <div class="logo"><svg xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny-ps" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet"><title>Devya Solutions</title><rect x="0" y="0" width="512" height="512" rx="96" ry="96" fill="#0A0A0A"/><g transform="translate(76 219) scale(2.05)"><path fill="#F5F5F5" d="M0.00553894 4.2084H11.6278C15.002 4.2084 17.7627 6.96911 17.7627 10.3433C17.7627 10.5478 17.7286 10.7864 17.6945 11.025C18.3762 9.93432 18.7511 8.63917 18.7511 7.27586C18.7511 3.35633 15.5814 0.152542 11.6619 0.152542C11.6619 0.152542 11.6619 0.152542 11.6278 0.152542H0.00553894V4.2084ZM11.6278 16.4441C11.6278 16.4441 11.6278 16.4441 11.6619 16.4441C16.7061 16.4441 20.7961 12.3201 20.7961 7.27586C20.7961 6.69645 20.762 6.15112 20.6597 5.6058C21.4096 7.00319 21.8186 8.63917 21.8186 10.3433C21.8186 15.9329 17.2515 20.5 11.6278 20.5H0.00553894V16.4441H11.6278ZM57.4879 4.2084H56.1246H45.8316C42.4915 4.2084 39.7308 6.96911 39.7308 10.3433C39.7308 10.5478 39.7308 10.7864 39.7649 11.025C39.1173 9.93432 38.7083 8.63917 38.7083 7.27586C38.7083 3.35633 41.878 0.152542 45.7975 0.152542C45.8316 0.152542 45.8316 0.152542 45.8316 0.152542H56.1246H57.4879H59.4307V4.2084H57.4879ZM57.3857 8.29834V12.3542H42.3211C41.9802 11.7748 41.7757 11.0591 41.7757 10.3433C41.7757 9.59349 41.9802 8.87775 42.3211 8.29834H57.3857ZM45.8316 16.4441C40.7873 16.4441 36.6633 12.3201 36.6633 7.27586C36.6633 6.69645 36.7315 6.15112 36.8337 5.6058C36.0839 7.00319 35.6749 8.63917 35.6749 10.3433C35.6749 15.9329 40.242 20.5 45.8316 20.5H56.1246H57.4879H59.4307V16.4441H57.4879H56.1246H45.8316ZM87.9312 17.4666V17.5007C88.1357 17.8075 88.3743 18.046 88.681 18.2164L87.9312 19.4775V19.5116C87.5563 20.1592 86.9087 20.5 86.1589 20.5C85.4091 20.5 84.7956 20.1592 84.4207 19.5116H84.3866L73.2415 0.152542H77.9108L87.9312 17.4666ZM87.3518 12.3883L89.7035 16.4441L99.1104 0.152542H94.4069L87.3518 12.3883ZM118.255 0.152542L120.164 2.40201L125.685 9.01408C126.026 9.38899 126.162 9.83207 126.162 10.3433V18.4209V20.5H122.107V11.0591L112.938 0.152542H118.255ZM130.014 0.152542L125.447 5.57171L127.253 7.71893C127.56 8.09384 127.798 8.50284 127.969 8.91183L135.331 0.152542H130.014ZM158.274 12.8654L160.932 8.26426L158.58 4.2084L149.173 20.5H153.877L155.922 16.9554L158.274 12.8654ZM165.942 12.8654L160.353 3.18591L160.319 3.15183C160.148 2.84509 159.91 2.60651 159.603 2.43609L160.319 1.17503V1.14094C160.693 0.49337 161.341 0.152542 162.091 0.152542C162.841 0.152542 163.488 0.49337 163.863 1.14094L175.042 20.5H170.339L168.294 16.9554L165.942 12.8654Z"/></g></svg></div>
+        <div><div class="brand-name">Devya</div><div class="brand-sub">دليل موارد التعلّم · Learning Resource Guide</div></div>
+      </div>
+      <h1>مصادر عربية مجانية لتعلّم مصطلحات الأعمال والاستثمار</h1>
+      <p class="lede">مجموعة مُتحقَّق منها من المصادر العربية <em>المجانية والحيّة</em> لتعلّم مصطلحات ريادة الأعمال، والتمويل، والاستثمار الجريء — مع تركيز على قطاع البرمجيات والـ SaaS والشركات الناشئة.</p>
+      <div class="verified">✔ تم التحقّق من كل الروابط بتاريخ 24 يوليو 2026 · إضافة الحوكمة وماكنزي فوروارد أُضيفت وتحقّقت في 4 أغسطس 2026</div>
+      <div class="legend">
+        <span class="tag msa">فصحى</span><span class="tag amiya">عامية</span>
+        <span class="tag free">مجاني</span><span class="tag tool">أداة قابلة للتحميل</span>
+        <span class="tag new">🆕 جديد</span>
+      </div>
+    </header>
+
+    <div class="filters" data-filterbar>
+      <div class="fgroup">
+        <span class="flabel">النوع</span>
+        <button class="fbtn active" data-f="type" data-v="all">الكل</button>
+        <button class="fbtn" data-f="type" data-v="glossary">قواميس</button>
+        <button class="fbtn" data-f="type" data-v="course">دورات</button>
+        <button class="fbtn" data-f="type" data-v="podcast">بودكاست</button>
+        <button class="fbtn" data-f="type" data-v="egypt">مصري</button>
+        <button class="fbtn" data-f="type" data-v="governance">الحوكمة</button>
+      </div>
+      <div class="fgroup">
+        <span class="flabel">اللغة</span>
+        <button class="fbtn active" data-f="lang" data-v="all">الكل</button>
+        <button class="fbtn" data-f="lang" data-v="msa">فصحى</button>
+        <button class="fbtn" data-f="lang" data-v="colloquial">عامية</button>
+      </div>
+    </div>
+
+    <section data-type="glossary">
+      <div class="eyebrow">القواميس والمعاجم الرسمية</div>
+      <p class="sec-note">مراجع فصحى رسمية — الأدقّ لضبط المصطلح ومقابله الإنجليزي. ابدأ من هنا.</p>
+      <div class="grid">
+        <div class="card">
+          <div class="name">دليل المصطلحات الاستثمارية «ثمين»<span class="en">CMA Thameen</span></div>
+          <div class="tags"><span class="tag msa">فصحى</span><span class="tag free">مجاني</span></div>
+          <div class="date"><b>🗓 الملف:</b> إصدار 2021 · النسخة على الموقع محدَّثة</div>
+          <div class="desc">معجم رسمي من هيئة السوق المالية السعودية: المراجحة، الصناديق مفتوحة/مغلقة، أدوات وتقارير الأسواق المالية.</div>
+          <div class="why"><b>لماذا:</b> جهة حكومية موثوقة، قراءة مباشرة + PDF مجاني + نسخة إنجليزية.</div>
+          <a class="go" href="https://thameen.cma.gov.sa/booklets/دليل-المصطلحات-الاستثمارية/" target="_blank" rel="noopener">↗ فتح الدليل</a>
+          <div class="subs"><a href="https://thameen.cma.gov.sa/wp-content/uploads/2021/07/دليل-المصطلحات-الاستثمارية-1.pdf" target="_blank" rel="noopener">↓ تحميل PDF</a></div>
+        </div>
+        <div class="card">
+          <div class="name">معجم المصطلحات المالية والاقتصادية<span class="en">Saudi MOF Dictionary</span></div>
+          <div class="tags"><span class="tag msa">فصحى</span><span class="tag free">مجاني</span></div>
+          <div class="date"><b>🗓 أُطلق:</b> ديسمبر 2025 (الإصدار الأول) — الأحدث</div>
+          <div class="desc">من وزارة المالية السعودية — أكثر من 2000 مصطلح مالي واقتصادي مع مقابلاتها الإنجليزية.</div>
+          <div class="why"><b>لماذا:</b> الأحدث والأوسع، مرجع سيادي مجاني للمصطلح الدقيق.</div>
+          <a class="go" href="https://www.mof.gov.sa/Knowledgecenter/Dictionary/" target="_blank" rel="noopener">↗ فتح المعجم</a>
+          <div class="subs"><a href="https://siwar.ksaa.gov.sa" target="_blank" rel="noopener">↗ سِوار — معاجم مجمع الملك سلمان</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section data-type="course">
+      <div class="eyebrow">منصّات الدورات المجانية (MOOC)</div>
+      <p class="sec-note">دورات مُنظّمة بشهادات مجانية في ريادة الأعمال والتمويل والتسويق. المحتوى المكتوب فصحى غالبًا.</p>
+      <div class="grid">
+        <div class="card">
+          <div class="name">إدراك<span class="en">Edraak</span></div>
+          <div class="tags"><span class="tag msa">فصحى</span><span class="tag free">مجاني + شهادة</span></div>
+          <div class="date"><b>🗓 نشطة:</b> كتالوج 2026 · ~10 مليون متعلّم</div>
+          <div class="desc">منصّة MOOC عربية غير ربحية (مؤسسة الملكة رانيا). تصنيفا «الأعمال والريادة» و«التكنولوجيا».</div>
+          <div class="why"><b>لماذا:</b> دورات كاملة بشهادات مجانية. <span style="color:var(--gold)">ملاحظة:</span> قسم التقنية يميل للبرمجة.</div>
+          <a class="go" href="https://www.edraak.org/en/explore/?category=business-and-entrepreneurship%2Ctechnology&type=courses" target="_blank" rel="noopener">↗ دورات الأعمال والتقنية</a>
+        </div>
+        <div class="card">
+          <div class="name">رواق<span class="en">Rwaq</span></div>
+          <div class="tags"><span class="tag msa">فصحى</span><span class="tag free">مجاني</span></div>
+          <div class="date"><b>🗓 نشطة:</b> © 2026 · دورات بتواريخ 2026</div>
+          <div class="desc">منصّة تعلّم مفتوح عربية: «مقدمة في ريادة الأعمال»، «وعي مالي في ثواني»، «مقدمة في علم التسويق».</div>
+          <div class="why"><b>لماذا:</b> محو الأمية المالية وريادة الأعمال. <span style="color:var(--gold)">ملاحظة:</span> غيّرت روابطها — ابدأ من صفحة الدورات.</div>
+          <a class="go" href="https://www.rwaq.org/courses" target="_blank" rel="noopener">↗ كتالوج الدورات</a>
+        </div>
+        <div class="card">
+          <div class="name">أكاديمية منشآت<span class="en">Monsha'at Academy</span></div>
+          <div class="tags"><span class="tag msa">فصحى</span><span class="tag free">مجاني + شهادة موثّقة</span></div>
+          <div class="date"><b>🗓 نشطة:</b> 2026 · هيئة حكومية</div>
+          <div class="desc">أكاديمية هيئة المنشآت الصغيرة والمتوسطة. مسارات: جذب المستثمرين، التمويل، التقييم، التفاوض، دراسة جدوى مالية.</div>
+          <div class="why"><b>لماذا:</b> الأقرب لمفردات التمويل والتقييم — فصحى بالكامل بشهادات موقّعة.</div>
+          <a class="go" href="https://academy.monshaat.gov.sa/" target="_blank" rel="noopener">↗ فتح الأكاديمية</a>
+        </div>
+        <div class="card">
+          <div class="name">أكاديمية حسوب<span class="en">Hsoub Academy</span></div>
+          <div class="tags"><span class="tag msa">فصحى</span><span class="tag free">مقالات وكتب مجانية</span></div>
+          <div class="date"><b>🗓 حيّة:</b> يوليو 2026 · +7500 مقالة</div>
+          <div class="desc">أكبر منصّة تعليمية عربية: قسم ريادة الأعمال (KPIs، القرار المالي) + تسويق + عمل حر + 35 كتابًا مجانيًا.</div>
+          <div class="why"><b>لماذا:</b> قاعدة معرفة فصحى ضخمة ومجانية للقراءة السريعة عن مفهوم محدّد.</div>
+          <a class="go" href="https://academy.hsoub.com/entrepreneurship/" target="_blank" rel="noopener">↗ قسم ريادة الأعمال</a>
+          <div class="subs"><a href="https://academy.hsoub.com/files/" target="_blank" rel="noopener">↓ الكتب المجانية</a></div>
+        </div>
+        <div class="card">
+          <div class="name">ماكنزي فوروارد<span class="en">McKinsey Forward · McKinsey.org</span></div>
+          <div class="tags"><span class="tag new">🆕 جديد</span><span class="tag free">مجاني + شارة إتمام</span></div>
+          <div class="date"><b>🗓 المدّة:</b> رحلة تعلّم 10 أسابيع · أونلاين · +130 دولة</div>
+          <div class="desc">برنامج ماكنزي العالمي المجاني لتطوير مهارات العمل الأساسية (حل المشكلات، التواصل، القيادة الذاتية) — بالإنجليزية بالكامل.</div>
+          <div class="why"><b>لماذا:</b> اسم ماكنزي + شارة إتمام رقمية مجانية تُضاف للسيرة الذاتية. <span style="color:var(--gold)">كود الإحالة عند التسجيل:</span> <b>25SE300678</b>.</div>
+          <a class="go" href="https://www.mckinsey.org/our-programs/forward/overview" target="_blank" rel="noopener">↗ صفحة التقديم</a>
+          <div class="subs">
+            <a href="https://pages.mckinsey.com/rs/473-ZYE-522/images/ENG_McKinseyorg_ForwardPoster.pdf?version=0&amp;mkt_tok=NDczLVpZRS01MjIAAAGgLqNsUB4xYsXz3BD7QU8OtYUE6X0Sz66iuLi0XHq06He-5Z7QuTwAnYY4-O2vZDANNWEvWdofw7xIl2spUqK_6K8tAkrtV0NePL8J94bWM4wu5Q9Exg" target="_blank" rel="noopener">↓ الملصق التعريفي (PDF)</a>
+            <a href="https://www.surveys.online/jfe/form/SV_0jE2ZeAs34sal9A" target="_blank" rel="noopener">↗ نموذج تسجيل الاهتمام</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section data-type="podcast">
+      <div class="eyebrow">بودكاست — المصطلح في سياقه</div>
+      <p class="sec-note">الأفضل لمفردات جمع التمويل من قصص مؤسّسين حقيقيين. اللغة غالبًا عامية خليجية — للفهم العملي لا لضبط الفصحى.</p>
+      <div class="grid">
+        <div class="card">
+          <div class="name">خضر و بزنس<span class="en">Khedr W Business</span></div>
+          <div class="tags"><span class="tag amiya">عامية</span><span class="tag free">مجاني</span><span class="tag tool">أدوات Excel</span></div>
+          <div class="date"><b>🗓 مستمر:</b> محتوى دائم + حلقات جديدة</div>
+          <div class="desc">الأفضل للتمويل: الاستثمار الملائكي، رأس المال المخاطر، طرق التقييم الستّ، وتقسيم الحصص (cap table) للشركة التقنية.</div>
+          <div class="why"><b>لماذا:</b> الأقوى عمليًا + <b>ملفّات Google Sheets جاهزة</b> للتقييم وتقسيم الحصص.</div>
+          <a class="go" href="https://ratteb.com/803" target="_blank" rel="noopener">↗ حلقة التقييم</a>
+          <div class="subs">
+            <a href="https://ratteb.com/158" target="_blank" rel="noopener">↗ حلقة تقسيم الحصص (Cap Table)</a>
+            <a href="https://podcasts.apple.com/us/podcast/id1487593681" target="_blank" rel="noopener">↗ كل الحلقات (Apple)</a>
+            <a href="https://docs.google.com/spreadsheets/d/19G4QQNmq_PMQ9vqXM33Y8kdTbNzjLESDZN-_yTiTtkU" target="_blank" rel="noopener">↓ نموذج التقييم (Sheet)</a>
+            <a href="https://docs.google.com/spreadsheets/d/1haRk4jixfpOcYPY1Q8s5Pfxgmkmx1evV7moXXN7SlSw" target="_blank" rel="noopener">↓ نموذج تقسيم الحصص (Sheet)</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="name">السوق<span class="en">Al-Souq · Thmanyah</span></div>
+          <div class="tags"><span class="tag amiya">عامية</span><span class="tag free">مجاني</span></div>
+          <div class="date warn"><b>⚠ 🗓 أحدث الحلقات:</b> 2024 — قد يكون متوقّفًا</div>
+          <div class="desc">مستثمر ملائكي + شريك McKinsey يناقشان جمع التمويل عبر حالات حقيقية — مثل مؤسّس «ليندو» وجمع 28 مليون دولار (جولة ب).</div>
+          <div class="why"><b>لماذا:</b> مصطلح جولات التمويل من أفواه المستثمرين. الأرشيف قيّم حتى لو توقّف النشر.</div>
+          <a class="go" href="https://thmanyah.com/podcasts/assouq" target="_blank" rel="noopener">↗ صفحة البودكاست</a>
+          <div class="subs"><a href="https://podcasts.apple.com/sa/podcast/id1608211461" target="_blank" rel="noopener">↗ Apple Podcasts</a></div>
+        </div>
+        <div class="card">
+          <div class="name">سوالف بزنس<span class="en">Swalif Business · Thmanyah</span></div>
+          <div class="tags"><span class="tag amiya">عامية</span><span class="tag free">مجاني</span></div>
+          <div class="date"><b>🗓 مُحدَّث:</b> فبراير 2026 · 147 حلقة</div>
+          <div class="desc">مكتبة ضخمة (~1.5 مليون مشاهدة). كل حلقة تجربة ضيف واحد في البزنس بتفاصيلها.</div>
+          <div class="why"><b>لماذا:</b> امتصاص مفردات الأعمال في سياق حقيقي عبر مكتبة مستمرّة ومجانية.</div>
+          <a class="go" href="https://www.youtube.com/playlist?list=PLeNNUmE-BlnE5GVCM_aZtWCLzCzHYA-ho" target="_blank" rel="noopener">↗ قائمة YouTube</a>
+          <div class="subs"><a href="https://thmanyah.com/@swalif" target="_blank" rel="noopener">↗ صفحة ثمانية</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section data-type="egypt">
+      <div class="eyebrow">إضافة — مصادر مصرية وعربية عامة</div>
+      <p class="sec-note">لسدّ التحيّز الجغرافي. روابط هذه المجموعة حيّة ومُتحقَّقة، لكنها خارج نطاق التحقّق العدائي متعدّد المصادر — إضافة موثوقة لا مُدقّقة بالكامل.</p>
+      <div class="grid">
+        <div class="card">
+          <div class="name">مهارات من Google<span class="en">Maharat min Google</span></div>
+          <div class="tags"><span class="tag msa">فصحى تقريبًا</span><span class="tag free">مجاني + شهادات</span></div>
+          <div class="date"><b>🗓 مبادرة مستمرّة:</b> +100 ألف مستفيد</div>
+          <div class="desc">+100 درس في الأعمال الرقمية: التسويق، التجارة الإلكترونية، تنمية المشروع. حضور مصري كبير.</div>
+          <div class="why"><b>لماذا:</b> الأقرب لأعمال المنتجات الرقمية بشهادات مجانية — بديل غير سعودي.</div>
+          <a class="go" href="https://learndigital.withgoogle.com/maharatgoogle/" target="_blank" rel="noopener">↗ فتح المنصّة</a>
+          <div class="subs"><a href="https://www.youtube.com/Maharat" target="_blank" rel="noopener">↗ قناة يوتيوب</a></div>
+        </div>
+        <div class="card">
+          <div class="name">مبادرة رواد النيل<span class="en">NilePreneurs · CBE + Nile University</span></div>
+          <div class="tags"><span class="tag msa">مصري/فصحى</span><span class="tag free">مجاني</span></div>
+          <div class="date"><b>🗓 نشطة:</b> مبادرة قومية جارية</div>
+          <div class="desc">برعاية البنك المركزي المصري وتنفيذ جامعة النيل. مسار «تعلّم» من الصفر إلى مؤسّس + منصّة «Guru» + إرشاد.</div>
+          <div class="why"><b>لماذا:</b> أقوى تدريب ريادي مصري مؤسّسي ومجاني — يربطك بخبراء.</div>
+          <a class="go" href="https://np.eg/programs/learn/" target="_blank" rel="noopener">↗ برنامج التدريب</a>
+          <div class="subs"><a href="https://np.eg/ar/" target="_blank" rel="noopener">↗ الموقع الرسمي</a></div>
+        </div>
+        <div class="card">
+          <div class="name">بزنس بالعربي<span class="en">Business بالعربى · Ahmed Rashad</span></div>
+          <div class="tags"><span class="tag amiya">عامية مصرية</span><span class="tag free">مجاني</span></div>
+          <div class="date"><b>🗓 يُحدَّث:</b> مرّتين أسبوعيًا</div>
+          <div class="desc">من أشهر بودكاست الأعمال في MENA: بناء الفريق، التوسّع، عقلية المؤسّس، مهارات البزنس.</div>
+          <div class="why"><b>لماذا:</b> صوت مصري بلهجة مألوفة — الأسهل للمبتدئ المصري.</div>
+          <a class="go" href="https://www.youtube.com/playlist?list=PLK6R01zBa3vJKurhwVvRhjQxpC60jrSO3" target="_blank" rel="noopener">↗ قائمة YouTube</a>
+          <div class="subs"><a href="https://podcasts.apple.com/us/podcast/id1490825968" target="_blank" rel="noopener">↗ Apple Podcasts</a></div>
+        </div>
+        <div class="card">
+          <div class="name">خمسة بيزنس<span class="en">Khamsa Business</span></div>
+          <div class="tags"><span class="tag amiya">عامية مصرية</span><span class="tag free">مجاني</span></div>
+          <div class="date"><b>🗓 نشط</b></div>
+          <div class="desc">بودكاست مصري في ريادة الأعمال — حوارات مع رواد أعمال وتجارب في السوق المصري.</div>
+          <div class="why"><b>لماذا:</b> مصدر مصري إضافي لتجارب محلّية ومصطلحات السوق.</div>
+          <a class="go" href="https://podcasts.apple.com/eg/podcast/id1501074558" target="_blank" rel="noopener">↗ Apple Podcasts</a>
+        </div>
+      </div>
+    </section>
+
+    <section data-type="governance">
+      <div class="eyebrow">إضافة جديدة — الحوكمة وإدارة المخاطر وأخلاقيات الأعمال</div>
+      <p class="sec-note">مجموعة أُضيفت في 4 أغسطس 2026: بودكاست ومحاضرات عن حوكمة الشركات والمراجعة الداخلية والامتثال، إلى جانب أخلاقيات التاجر المسلم. غالبها فيديو بعامية خليجية/مصرية — مصدر عملي لا مرجع فصحى.</p>
+      <div class="grid">
+        <div class="card">
+          <div class="name">شاهين شوكاست<span class="en">Ahmed Shahin</span></div>
+          <div class="tags"><span class="tag new">🆕 جديد</span><span class="tag amiya">عامية</span><span class="tag free">مجاني</span></div>
+          <div class="date"><b>🎬 الحلقة:</b> #٥٥ · قراءة كتاب لا بودكاست عادي</div>
+          <div class="desc">حلقة "كتاب مش بودكاست": تأسيس الشركات + أخلاقيات التاجر المسلم في البيع والشراء والتعامل التجاري.</div>
+          <div class="why"><b>لماذا:</b> يجمع الجانب القانوني للتأسيس بالبعد الأخلاقي/الشرعي — زاوية نادرة في المحتوى العربي.</div>
+          <a class="go" href="https://youtu.be/DVRgY0C-mYE" target="_blank" rel="noopener">↗ مشاهدة الحلقة</a>
+        </div>
+        <div class="card">
+          <div class="name">بودكاست بترولي<span class="en">إذاعة مختلف</span></div>
+          <div class="tags"><span class="tag new">🆕 جديد</span><span class="tag amiya">عامية</span><span class="tag free">مجاني</span></div>
+          <div class="date"><b>🎬 الحلقة:</b> ما لا يسع رائد الأعمال المسلم جهله</div>
+          <div class="desc">القواعد الشرعية والعملية الأساسية اللي المفروض كل رائد أعمال مسلم يعرفها قبل ما يبدأ مشروعه.</div>
+          <div class="why"><b>لماذا:</b> يسدّ فجوة نادرة — الضوابط الشرعية لريادة الأعمال بلغة عملية مباشرة.</div>
+          <a class="go" href="https://youtu.be/1a8Ud1QdoD8" target="_blank" rel="noopener">↗ مشاهدة الحلقة</a>
+        </div>
+        <div class="card">
+          <div class="name">بودكاست قوائم<span class="en">The Stage · مع عبدالله الكبريش</span></div>
+          <div class="tags"><span class="tag new">🆕 جديد</span><span class="tag amiya">عامية</span><span class="tag free">مجاني</span></div>
+          <div class="date"><b>🎬 الحلقة:</b> الحوكمة بين المفهوم والواقع</div>
+          <div class="desc">حوار متعمّق عن الفرق بين حوكمة الشركات كمفهوم نظري وتطبيقها الفعلي داخل المنظمات.</div>
+          <div class="why"><b>لماذا:</b> ضيف متخصص يشرح فجوة "النظرية مقابل التطبيق" في الحوكمة — نادرة الطرح بالعربي.</div>
+          <a class="go" href="https://youtu.be/h5dAUWCOVho" target="_blank" rel="noopener">↗ مشاهدة الحلقة</a>
+        </div>
+        <div class="card">
+          <div class="name">بودكاست 317<span class="en">الهيئة السعودية للمحامين · Saudi Bar Association</span></div>
+          <div class="tags"><span class="tag new">🆕 جديد</span><span class="tag msa">فصحى</span><span class="tag free">مجاني</span></div>
+          <div class="date"><b>🎬 الحلقة:</b> مع مدرّب قانوني وخبير في الحوكمة</div>
+          <div class="desc">نقاش من جهة رسمية (نقابة المحامين السعودية) يربط الحوكمة بالإطار القانوني والتدريب القانوني.</div>
+          <div class="why"><b>لماذا:</b> مصدر رسمي نادر يربط مصطلح الحوكمة بالممارسة القانونية مباشرة.</div>
+          <a class="go" href="https://youtu.be/CyNVk8iK3CU" target="_blank" rel="noopener">↗ مشاهدة الحلقة</a>
+        </div>
+        <div class="card">
+          <div class="name">مكتبة مصادر الحوكمة والمخاطر<span class="en">Hadeel Alsulami · LinkedIn</span></div>
+          <div class="tags"><span class="tag new">🆕 جديد</span><span class="tag msa">فصحى</span><span class="tag free">مجاني</span></div>
+          <div class="date"><b>📌 منشور:</b> مكتبة مختارة لأهم مصادر الحوكمة والمخاطر</div>
+          <div class="desc">منشور لينكدإن يجمع أهم المصادر المتفرقة لتعلّم حوكمة الشركات وإدارة المخاطر في مكان واحد.</div>
+          <div class="why"><b>لماذا:</b> نقطة انطلاق مُنسَّقة توفّر وقت البحث اليدوي عن مصادر الحوكمة والمخاطر.</div>
+          <a class="go" href="https://www.linkedin.com/posts/hadeel-s-alsulami_%D9%85%D9%83%D8%AA%D8%A8%D8%A9-%D9%85%D8%AE%D8%AA%D8%A7%D8%B1%D8%A9-%D9%84%D8%A3%D9%87%D9%85-%D9%85%D8%B5%D8%A7%D8%AF%D8%B1-%D8%A7%D9%84%D8%AD%D9%88%D9%83%D9%85%D8%A9-%D9%88%D8%A7%D9%84%D9%85%D8%AE%D8%A7%D8%B7%D8%B1-activity-7421462271924715520-uzCc" target="_blank" rel="noopener">↗ فتح المنشور</a>
+        </div>
+        <div class="card">
+          <div class="name">المراجعة الداخلية والحوكمة من الألف للياء<span class="en">بتاع اقتصاد</span></div>
+          <div class="tags"><span class="tag new">🆕 جديد</span><span class="tag amiya">عامية مصرية</span><span class="tag free">مجاني</span></div>
+          <div class="date"><b>🎬 حلقة:</b> #بتاع_اقتصاد</div>
+          <div class="desc">شرح شامل بعامية مصرية للمراجعة الداخلية (Internal Audit) وعلاقتها بمنظومة الحوكمة، من الأساسيات للتفاصيل.</div>
+          <div class="why"><b>لماذا:</b> من أشمل الشروحات العربية لموضوع المراجعة الداخلية كجزء من الحوكمة.</div>
+          <a class="go" href="https://youtu.be/B-GC_eo1Ec0" target="_blank" rel="noopener">↗ مشاهدة الحلقة</a>
+        </div>
+        <div class="card">
+          <div class="name">أثر الحوكمة والالتزام داخل المنظمة<span class="en">غرفة الرياض · Riyadh Chamber</span></div>
+          <div class="tags"><span class="tag new">🆕 جديد</span><span class="tag msa">فصحى</span><span class="tag free">مجاني</span></div>
+          <div class="date"><b>🎬 محاضرة:</b> بمشاركة وليد ياسين</div>
+          <div class="desc">جلسة من غرفة الرياض عن أثر الحوكمة والالتزام (Compliance) على أداء المنظمة، بمشاركة وليد ياسين.</div>
+          <div class="why"><b>لماذا:</b> قناة غرفة الرياض كنز معرفي مستمر في محتوى الحوكمة والمخاطر والامتثال.</div>
+          <a class="go" href="https://youtu.be/twUxMAP8M1A" target="_blank" rel="noopener">↗ مشاهدة المحاضرة</a>
+          <div class="subs"><a href="https://www.youtube.com/@RiyadhChamber" target="_blank" rel="noopener">↗ قناة غرفة الرياض</a></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="caveats">
+      <h2>⚠️ ملاحظات مهمّة قبل ما تبدأ</h2>
+      <ul>
+        <li><b>فصحى مقابل عامية:</b> القواميس والدورات الحكومية والمحتوى المكتوب = فصحى. البودكاست = عامية. استعمل القواميس لضبط المصطلح والبودكاست للفهم العملي.</li>
+        <li><b>فجوة SAFE والـ Cap Table:</b> لا يوجد مصدر عربي مجاني مُتحقَّق يشرح أداة SAFE أو تفاصيل الـ cap table بالفصحى — الأقرب عمليًا نماذج Google Sheets من «خضر و بزنس».</li>
+        <li><b>مفاهيم الـ SaaS:</b> مصطلحات MRR/ARR وChurn وLTV/CAC مغطّاة بشكل خفيف. أقسام التقنية في MOOC تميل للبرمجة لا لنماذج الأعمال.</li>
+        <li><b>التحيّز الجغرافي:</b> المجموعة المُدقّقة سعودية/أردنية. القسم المصري (مهارات جوجل، رواد النيل، بزنس بالعربي، خمسة بيزنس) روابطه حيّة لكنه خارج التحقّق العدائي الأصلي.</li>
+      </ul>
+    </div>
+
+    <div class="tips">
+      <h2>خطّة استخدام سريعة</h2>
+      <ol>
+        <li><b>الأساس:</b> افتح «معجم المالية» أو «ثمين» كمرجع بجوارك — كل مصطلح جديد اضبط نطقه ومقابله الإنجليزي فورًا.</li>
+        <li><b>التمويل والتقييم:</b> اسمع حلقتَي «خضر و بزنس» وحمّل ملفَّي الـ Sheets وطبّق أرقامك عليهما.</li>
+        <li><b>البنية:</b> خذ مسار «الإدارة المالية» في منشآت لتغطية جذب المستثمرين ودراسة الجدوى بشهادة.</li>
+        <li><b>الربط بالإنجليزية:</b> تعلّم المصطلح العربي + مقابله الإنجليزي معًا — «ثمين» والمعجم يعطيانك الاثنين.</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- ==================== ENGLISH VIEW ==================== -->
+  <div data-view="en">
+    <header>
+      <div class="brand-row">
+        <div class="logo"><svg xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny-ps" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet"><title>Devya Solutions</title><rect x="0" y="0" width="512" height="512" rx="96" ry="96" fill="#0A0A0A"/><g transform="translate(76 219) scale(2.05)"><path fill="#F5F5F5" d="M0.00553894 4.2084H11.6278C15.002 4.2084 17.7627 6.96911 17.7627 10.3433C17.7627 10.5478 17.7286 10.7864 17.6945 11.025C18.3762 9.93432 18.7511 8.63917 18.7511 7.27586C18.7511 3.35633 15.5814 0.152542 11.6619 0.152542C11.6619 0.152542 11.6619 0.152542 11.6278 0.152542H0.00553894V4.2084ZM11.6278 16.4441C11.6278 16.4441 11.6278 16.4441 11.6619 16.4441C16.7061 16.4441 20.7961 12.3201 20.7961 7.27586C20.7961 6.69645 20.762 6.15112 20.6597 5.6058C21.4096 7.00319 21.8186 8.63917 21.8186 10.3433C21.8186 15.9329 17.2515 20.5 11.6278 20.5H0.00553894V16.4441H11.6278ZM57.4879 4.2084H56.1246H45.8316C42.4915 4.2084 39.7308 6.96911 39.7308 10.3433C39.7308 10.5478 39.7308 10.7864 39.7649 11.025C39.1173 9.93432 38.7083 8.63917 38.7083 7.27586C38.7083 3.35633 41.878 0.152542 45.7975 0.152542C45.8316 0.152542 45.8316 0.152542 45.8316 0.152542H56.1246H57.4879H59.4307V4.2084H57.4879ZM57.3857 8.29834V12.3542H42.3211C41.9802 11.7748 41.7757 11.0591 41.7757 10.3433C41.7757 9.59349 41.9802 8.87775 42.3211 8.29834H57.3857ZM45.8316 16.4441C40.7873 16.4441 36.6633 12.3201 36.6633 7.27586C36.6633 6.69645 36.7315 6.15112 36.8337 5.6058C36.0839 7.00319 35.6749 8.63917 35.6749 10.3433C35.6749 15.9329 40.242 20.5 45.8316 20.5H56.1246H57.4879H59.4307V16.4441H57.4879H56.1246H45.8316ZM87.9312 17.4666V17.5007C88.1357 17.8075 88.3743 18.046 88.681 18.2164L87.9312 19.4775V19.5116C87.5563 20.1592 86.9087 20.5 86.1589 20.5C85.4091 20.5 84.7956 20.1592 84.4207 19.5116H84.3866L73.2415 0.152542H77.9108L87.9312 17.4666ZM87.3518 12.3883L89.7035 16.4441L99.1104 0.152542H94.4069L87.3518 12.3883ZM118.255 0.152542L120.164 2.40201L125.685 9.01408C126.026 9.38899 126.162 9.83207 126.162 10.3433V18.4209V20.5H122.107V11.0591L112.938 0.152542H118.255ZM130.014 0.152542L125.447 5.57171L127.253 7.71893C127.56 8.09384 127.798 8.50284 127.969 8.91183L135.331 0.152542H130.014ZM158.274 12.8654L160.932 8.26426L158.58 4.2084L149.173 20.5H153.877L155.922 16.9554L158.274 12.8654ZM165.942 12.8654L160.353 3.18591L160.319 3.15183C160.148 2.84509 159.91 2.60651 159.603 2.43609L160.319 1.17503V1.14094C160.693 0.49337 161.341 0.152542 162.091 0.152542C162.841 0.152542 163.488 0.49337 163.863 1.14094L175.042 20.5H170.339L168.294 16.9554L165.942 12.8654Z"/></g></svg></div>
+        <div><div class="brand-name">Devya</div><div class="brand-sub">Learning Resource Guide</div></div>
+      </div>
+      <h1>Free Arabic Resources for Business & Investment Terminology</h1>
+      <p class="lede">A verified set of <em>free, currently-live Arabic resources</em> for learning entrepreneurship, finance, and venture-capital vocabulary — with a focus on software, SaaS, and startups.</p>
+      <div class="verified">✔ All links verified on 24 July 2026 · Governance & McKinsey Forward section added and verified 4 Aug 2026</div>
+      <div class="legend">
+        <span class="tag msa">MSA</span><span class="tag amiya">Colloquial</span>
+        <span class="tag free">Free</span><span class="tag tool">Downloadable tool</span>
+        <span class="tag new">🆕 New</span>
+      </div>
+    </header>
+
+    <div class="filters" data-filterbar>
+      <div class="fgroup">
+        <span class="flabel">Type</span>
+        <button class="fbtn active" data-f="type" data-v="all">All</button>
+        <button class="fbtn" data-f="type" data-v="glossary">Glossaries</button>
+        <button class="fbtn" data-f="type" data-v="course">Courses</button>
+        <button class="fbtn" data-f="type" data-v="podcast">Podcasts</button>
+        <button class="fbtn" data-f="type" data-v="egypt">Egyptian</button>
+        <button class="fbtn" data-f="type" data-v="governance">Governance</button>
+      </div>
+      <div class="fgroup">
+        <span class="flabel">Language</span>
+        <button class="fbtn active" data-f="lang" data-v="all">All</button>
+        <button class="fbtn" data-f="lang" data-v="msa">MSA</button>
+        <button class="fbtn" data-f="lang" data-v="colloquial">Colloquial</button>
+      </div>
+    </div>
+
+    <section data-type="glossary">
+      <div class="eyebrow">Official Glossaries & Dictionaries</div>
+      <p class="sec-note">Formal MSA references — best for locking down the exact term + its English equivalent. Start here.</p>
+      <div class="grid">
+        <div class="card">
+          <div class="name">CMA "Thameen" Investment Terms Guide<span class="en">دليل المصطلحات الاستثمارية — ثمين</span></div>
+          <div class="tags"><span class="tag msa">MSA</span><span class="tag free">Free</span></div>
+          <div class="date"><b>🗓 PDF:</b> 2021 edition · web version kept current</div>
+          <div class="desc">Official glossary from Saudi Capital Market Authority: arbitrage, open/closed-end funds, market instruments and reports.</div>
+          <div class="why"><b>Why:</b> Trusted government source, readable online + free PDF + English version.</div>
+          <a class="go" href="https://thameen.cma.gov.sa/booklets/دليل-المصطلحات-الاستثمارية/" target="_blank" rel="noopener">↗ Open guide</a>
+          <div class="subs"><a href="https://thameen.cma.gov.sa/wp-content/uploads/2021/07/دليل-المصطلحات-الاستثمارية-1.pdf" target="_blank" rel="noopener">↓ Download PDF</a></div>
+        </div>
+        <div class="card">
+          <div class="name">Saudi MOF Financial & Economic Dictionary<span class="en">معجم المصطلحات المالية والاقتصادية</span></div>
+          <div class="tags"><span class="tag msa">MSA</span><span class="tag free">Free</span></div>
+          <div class="date"><b>🗓 Launched:</b> Dec 2025 (1st edition) — newest</div>
+          <div class="desc">From the Saudi Ministry of Finance — 2,000+ financial/economic terms with English equivalents.</div>
+          <div class="why"><b>Why:</b> Newest and broadest sovereign reference, free, precise terminology.</div>
+          <a class="go" href="https://www.mof.gov.sa/Knowledgecenter/Dictionary/" target="_blank" rel="noopener">↗ Open dictionary</a>
+          <div class="subs"><a href="https://siwar.ksaa.gov.sa" target="_blank" rel="noopener">↗ Siwar — King Salman Academy lexicons</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section data-type="course">
+      <div class="eyebrow">Free Course Platforms (MOOC)</div>
+      <p class="sec-note">Structured free courses with certificates in entrepreneurship, finance, and marketing. Written content is mostly MSA.</p>
+      <div class="grid">
+        <div class="card">
+          <div class="name">Edraak<span class="en">إدراك · Queen Rania Foundation</span></div>
+          <div class="tags"><span class="tag msa">MSA</span><span class="tag free">Free + cert</span></div>
+          <div class="date"><b>🗓 Active:</b> 2026 catalog · ~10M learners</div>
+          <div class="desc">Non-profit Arabic MOOC. Dedicated "Business & Entrepreneurship" and "Technology" categories.</div>
+          <div class="why"><b>Why:</b> Full courses, free certificates. <span style="color:var(--gold)">Note:</span> Tech category leans toward programming.</div>
+          <a class="go" href="https://www.edraak.org/en/explore/?category=business-and-entrepreneurship%2Ctechnology&type=courses" target="_blank" rel="noopener">↗ Business & Tech courses</a>
+        </div>
+        <div class="card">
+          <div class="name">Rwaq<span class="en">رواق</span></div>
+          <div class="tags"><span class="tag msa">MSA</span><span class="tag free">Free</span></div>
+          <div class="date"><b>🗓 Active:</b> © 2026 · 2026 course dates</div>
+          <div class="desc">Arabic open-learning platform: Intro to Entrepreneurship, Financial Awareness, Intro to Marketing.</div>
+          <div class="why"><b>Why:</b> Financial literacy + entrepreneurship. <span style="color:var(--gold)">Note:</span> Links moved — start from the courses page.</div>
+          <a class="go" href="https://www.rwaq.org/courses" target="_blank" rel="noopener">↗ Course catalog</a>
+        </div>
+        <div class="card">
+          <div class="name">Monsha'at Academy<span class="en">أكاديمية منشآت</span></div>
+          <div class="tags"><span class="tag msa">MSA</span><span class="tag free">Free + signed cert</span></div>
+          <div class="date"><b>🗓 Active:</b> 2026 · government authority</div>
+          <div class="desc">Academy of Saudi SME authority. Tracks: attracting investors, funding, valuation, negotiation, financial feasibility.</div>
+          <div class="why"><b>Why:</b> Closest to funding/valuation vocabulary — fully MSA with signed certificates.</div>
+          <a class="go" href="https://academy.monshaat.gov.sa/" target="_blank" rel="noopener">↗ Open academy</a>
+        </div>
+        <div class="card">
+          <div class="name">Hsoub Academy<span class="en">أكاديمية حسوب</span></div>
+          <div class="tags"><span class="tag msa">MSA</span><span class="tag free">Free articles & books</span></div>
+          <div class="date"><b>🗓 Live:</b> July 2026 · 7,500+ articles</div>
+          <div class="desc">Largest Arabic education platform: entrepreneurship section (KPIs, financial decisions) + marketing + freelance + 35 free books.</div>
+          <div class="why"><b>Why:</b> Huge free MSA knowledge base for quickly reading up on a concept.</div>
+          <a class="go" href="https://academy.hsoub.com/entrepreneurship/" target="_blank" rel="noopener">↗ Entrepreneurship section</a>
+          <div class="subs"><a href="https://academy.hsoub.com/files/" target="_blank" rel="noopener">↓ Free books</a></div>
+        </div>
+        <div class="card">
+          <div class="name">McKinsey Forward<span class="en">McKinsey.org</span></div>
+          <div class="tags"><span class="tag new">🆕 New</span><span class="tag free">Free + completion badge</span></div>
+          <div class="date"><b>🗓 Length:</b> 10-week journey · digital/virtual · 130+ countries</div>
+          <div class="desc">McKinsey's free global program for essential workplace skills (problem-solving, communication, self-leadership) — fully in English.</div>
+          <div class="why"><b>Why:</b> McKinsey brand name + a free shareable digital completion badge for your résumé/LinkedIn. <span style="color:var(--gold)">Referral code at sign-up:</span> <b>25SE300678</b>.</div>
+          <a class="go" href="https://www.mckinsey.org/our-programs/forward/overview" target="_blank" rel="noopener">↗ Application page</a>
+          <div class="subs">
+            <a href="https://pages.mckinsey.com/rs/473-ZYE-522/images/ENG_McKinseyorg_ForwardPoster.pdf?version=0&amp;mkt_tok=NDczLVpZRS01MjIAAAGgLqNsUB4xYsXz3BD7QU8OtYUE6X0Sz66iuLi0XHq06He-5Z7QuTwAnYY4-O2vZDANNWEvWdofw7xIl2spUqK_6K8tAkrtV0NePL8J94bWM4wu5Q9Exg" target="_blank" rel="noopener">↓ Program poster (PDF)</a>
+            <a href="https://www.surveys.online/jfe/form/SV_0jE2ZeAs34sal9A" target="_blank" rel="noopener">↗ Register your interest</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section data-type="podcast">
+      <div class="eyebrow">Podcasts — Terms in Real Context</div>
+      <p class="sec-note">Best for fundraising vocabulary from real founder cases. Mostly Gulf colloquial — great for practical understanding, not strict MSA.</p>
+      <div class="grid">
+        <div class="card">
+          <div class="name">Khedr W Business<span class="en">خضر و بزنس</span></div>
+          <div class="tags"><span class="tag amiya">Colloquial</span><span class="tag free">Free</span><span class="tag tool">Excel tools</span></div>
+          <div class="date"><b>🗓 Ongoing:</b> evergreen + new episodes</div>
+          <div class="desc">Best for fundraising: angel investing, VC, the six valuation methods, and cap-table/equity split for a tech startup.</div>
+          <div class="why"><b>Why:</b> Strongest practically + <b>ready Google Sheets</b> for valuation and cap-table.</div>
+          <a class="go" href="https://ratteb.com/803" target="_blank" rel="noopener">↗ Valuation episode</a>
+          <div class="subs">
+            <a href="https://ratteb.com/158" target="_blank" rel="noopener">↗ Cap-table / equity episode</a>
+            <a href="https://podcasts.apple.com/us/podcast/id1487593681" target="_blank" rel="noopener">↗ All episodes (Apple)</a>
+            <a href="https://docs.google.com/spreadsheets/d/19G4QQNmq_PMQ9vqXM33Y8kdTbNzjLESDZN-_yTiTtkU" target="_blank" rel="noopener">↓ Valuation model (Sheet)</a>
+            <a href="https://docs.google.com/spreadsheets/d/1haRk4jixfpOcYPY1Q8s5Pfxgmkmx1evV7moXXN7SlSw" target="_blank" rel="noopener">↓ Equity-split model (Sheet)</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="name">Al-Souq<span class="en">السوق · Thmanyah</span></div>
+          <div class="tags"><span class="tag amiya">Colloquial</span><span class="tag free">Free</span></div>
+          <div class="date warn"><b>⚠ 🗓 Newest episodes:</b> 2024 — possibly dormant</div>
+          <div class="desc">An angel investor + a McKinsey partner discuss fundraising via real cases — e.g. Lendo's founder raising $28M (Series B).</div>
+          <div class="why"><b>Why:</b> Funding-round vocabulary straight from investors. Archive is valuable even if paused.</div>
+          <a class="go" href="https://thmanyah.com/podcasts/assouq" target="_blank" rel="noopener">↗ Podcast page</a>
+          <div class="subs"><a href="https://podcasts.apple.com/sa/podcast/id1608211461" target="_blank" rel="noopener">↗ Apple Podcasts</a></div>
+        </div>
+        <div class="card">
+          <div class="name">Swalif Business<span class="en">سوالف بزنس · Thmanyah</span></div>
+          <div class="tags"><span class="tag amiya">Colloquial</span><span class="tag free">Free</span></div>
+          <div class="date"><b>🗓 Updated:</b> Feb 2026 · 147 episodes</div>
+          <div class="desc">Huge library (~1.5M views). Each episode covers one guest's real business experience in detail.</div>
+          <div class="why"><b>Why:</b> Absorb business vocabulary in real context via a large, ongoing free library.</div>
+          <a class="go" href="https://www.youtube.com/playlist?list=PLeNNUmE-BlnE5GVCM_aZtWCLzCzHYA-ho" target="_blank" rel="noopener">↗ YouTube playlist</a>
+          <div class="subs"><a href="https://thmanyah.com/@swalif" target="_blank" rel="noopener">↗ Thmanyah page</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section data-type="egypt">
+      <div class="eyebrow">Addition — Egyptian & Pan-Arab Sources</div>
+      <p class="sec-note">To offset the geographic skew. These links are verified live but sit outside the original multi-source adversarial verification — a trusted addition, not fully vetted.</p>
+      <div class="grid">
+        <div class="card">
+          <div class="name">Maharat min Google<span class="en">مهارات من Google</span></div>
+          <div class="tags"><span class="tag msa">~MSA</span><span class="tag free">Free + certs</span></div>
+          <div class="date"><b>🗓 Ongoing:</b> 100k+ beneficiaries</div>
+          <div class="desc">100+ lessons in digital business skills: marketing, e-commerce, growing your project. Strong Egyptian reach.</div>
+          <div class="why"><b>Why:</b> Closest to digital-product business concepts with free certificates — a non-Saudi option.</div>
+          <a class="go" href="https://learndigital.withgoogle.com/maharatgoogle/" target="_blank" rel="noopener">↗ Open platform</a>
+          <div class="subs"><a href="https://www.youtube.com/Maharat" target="_blank" rel="noopener">↗ YouTube channel</a></div>
+        </div>
+        <div class="card">
+          <div class="name">NilePreneurs<span class="en">مبادرة رواد النيل</span></div>
+          <div class="tags"><span class="tag msa">Egyptian/MSA</span><span class="tag free">Free</span></div>
+          <div class="date"><b>🗓 Active:</b> ongoing national initiative</div>
+          <div class="desc">Sponsored by the Central Bank of Egypt, run by Nile University. "Learn" track from zero to founder + "Guru" e-learning + mentoring.</div>
+          <div class="why"><b>Why:</b> Strongest institutional, free Egyptian entrepreneurship training — connects you to real experts.</div>
+          <a class="go" href="https://np.eg/programs/learn/" target="_blank" rel="noopener">↗ Training program</a>
+          <div class="subs"><a href="https://np.eg/ar/" target="_blank" rel="noopener">↗ Official site</a></div>
+        </div>
+        <div class="card">
+          <div class="name">Business بالعربى<span class="en">بزنس بالعربي · Ahmed Rashad</span></div>
+          <div class="tags"><span class="tag amiya">Egyptian colloquial</span><span class="tag free">Free</span></div>
+          <div class="date"><b>🗓 Updated:</b> twice weekly</div>
+          <div class="desc">One of MENA's top business podcasts: team-building, scaling, founder mindset, core business skills.</div>
+          <div class="why"><b>Why:</b> An Egyptian voice in a familiar dialect — easiest entry point for an Egyptian beginner.</div>
+          <a class="go" href="https://www.youtube.com/playlist?list=PLK6R01zBa3vJKurhwVvRhjQxpC60jrSO3" target="_blank" rel="noopener">↗ YouTube playlist</a>
+          <div class="subs"><a href="https://podcasts.apple.com/us/podcast/id1490825968" target="_blank" rel="noopener">↗ Apple Podcasts</a></div>
+        </div>
+        <div class="card">
+          <div class="name">Khamsa Business<span class="en">خمسة بيزنس</span></div>
+          <div class="tags"><span class="tag amiya">Egyptian colloquial</span><span class="tag free">Free</span></div>
+          <div class="date"><b>🗓 Active</b></div>
+          <div class="desc">Egyptian entrepreneurship podcast — interviews with founders and hands-on experiences in the Egyptian market.</div>
+          <div class="why"><b>Why:</b> Extra Egyptian source for local cases and market terminology.</div>
+          <a class="go" href="https://podcasts.apple.com/eg/podcast/id1501074558" target="_blank" rel="noopener">↗ Apple Podcasts</a>
+        </div>
+      </div>
+    </section>
+
+    <section data-type="governance">
+      <div class="eyebrow">New Addition — Governance, Risk & Business Ethics</div>
+      <p class="sec-note">Added 4 August 2026: podcasts and talks on corporate governance, internal audit, and compliance, plus Muslim-merchant business ethics. Mostly video, Gulf/Egyptian colloquial — a practical source, not an MSA reference.</p>
+      <div class="grid">
+        <div class="card">
+          <div class="name">Shaheen Showcast<span class="en">شاهين شوكاست · Ahmed Shahin</span></div>
+          <div class="tags"><span class="tag new">🆕 New</span><span class="tag amiya">Colloquial</span><span class="tag free">Free</span></div>
+          <div class="date"><b>🎬 Episode:</b> #55 · a "book, not podcast" format</div>
+          <div class="desc">"A book, not a podcast" episode: company formation + the ethics of the Muslim merchant in trade and commerce.</div>
+          <div class="why"><b>Why:</b> Pairs the legal side of incorporation with the ethical/Sharia dimension — a rare angle in Arabic content.</div>
+          <a class="go" href="https://youtu.be/DVRgY0C-mYE" target="_blank" rel="noopener">↗ Watch episode</a>
+        </div>
+        <div class="card">
+          <div class="name">Petroli Podcast<span class="en">بودكاست بترولي · Mukhtalif Radio</span></div>
+          <div class="tags"><span class="tag new">🆕 New</span><span class="tag amiya">Colloquial</span><span class="tag free">Free</span></div>
+          <div class="date"><b>🎬 Episode:</b> What a Muslim entrepreneur must not be ignorant of</div>
+          <div class="desc">The core Sharia and practical rules a Muslim entrepreneur should know before launching a venture.</div>
+          <div class="why"><b>Why:</b> Fills a rare gap — Sharia-compliant entrepreneurship guidance in plain, practical language.</div>
+          <a class="go" href="https://youtu.be/1a8Ud1QdoD8" target="_blank" rel="noopener">↗ Watch episode</a>
+        </div>
+        <div class="card">
+          <div class="name">Qawaem Podcast<span class="en">بودكاست قوائم · The Stage, w/ Abdullah Al-Kubaish</span></div>
+          <div class="tags"><span class="tag new">🆕 New</span><span class="tag amiya">Colloquial</span><span class="tag free">Free</span></div>
+          <div class="date"><b>🎬 Episode:</b> Governance between concept and reality</div>
+          <div class="desc">An in-depth conversation on the gap between corporate governance as a theoretical concept and its real application inside organizations.</div>
+          <div class="why"><b>Why:</b> A specialist guest breaks down the "theory vs. practice" gap in governance — rarely covered in Arabic.</div>
+          <a class="go" href="https://youtu.be/h5dAUWCOVho" target="_blank" rel="noopener">↗ Watch episode</a>
+        </div>
+        <div class="card">
+          <div class="name">Podcast 317<span class="en">بودكاست 317 · Saudi Bar Association</span></div>
+          <div class="tags"><span class="tag new">🆕 New</span><span class="tag msa">MSA</span><span class="tag free">Free</span></div>
+          <div class="date"><b>🎬 Episode:</b> With a legal trainer and a governance expert</div>
+          <div class="desc">A discussion from an official body (Saudi Bar Association) linking governance to the legal framework and legal training.</div>
+          <div class="why"><b>Why:</b> A rare official source connecting the term "governance" directly to legal practice.</div>
+          <a class="go" href="https://youtu.be/CyNVk8iK3CU" target="_blank" rel="noopener">↗ Watch episode</a>
+        </div>
+        <div class="card">
+          <div class="name">GRC Resource Library<span class="en">مكتبة مصادر الحوكمة والمخاطر · Hadeel Alsulami, LinkedIn</span></div>
+          <div class="tags"><span class="tag new">🆕 New</span><span class="tag msa">MSA</span><span class="tag free">Free</span></div>
+          <div class="date"><b>📌 Post:</b> A curated library of top governance & risk resources</div>
+          <div class="desc">A LinkedIn post that rounds up the most important scattered resources for learning corporate governance and risk management in one place.</div>
+          <div class="why"><b>Why:</b> A curated starting point that saves the manual search for GRC resources.</div>
+          <a class="go" href="https://www.linkedin.com/posts/hadeel-s-alsulami_%D9%85%D9%83%D8%AA%D8%A8%D8%A9-%D9%85%D8%AE%D8%AA%D8%A7%D8%B1%D8%A9-%D9%84%D8%A3%D9%87%D9%85-%D9%85%D8%B5%D8%A7%D8%AF%D8%B1-%D8%A7%D9%84%D8%AD%D9%88%D9%83%D9%85%D8%A9-%D9%88%D8%A7%D9%84%D9%85%D8%AE%D8%A7%D8%B7%D8%B1-activity-7421462271924715520-uzCc" target="_blank" rel="noopener">↗ Open post</a>
+        </div>
+        <div class="card">
+          <div class="name">Internal Audit & Governance A-Z<span class="en">بتاع اقتصاد</span></div>
+          <div class="tags"><span class="tag new">🆕 New</span><span class="tag amiya">Egyptian colloquial</span><span class="tag free">Free</span></div>
+          <div class="date"><b>🎬 Episode:</b> #بتاع_اقتصاد</div>
+          <div class="desc">A full walkthrough in Egyptian colloquial of internal audit and its relationship to the governance system, from basics to detail.</div>
+          <div class="why"><b>Why:</b> One of the most complete Arabic explanations of internal audit as part of governance.</div>
+          <a class="go" href="https://youtu.be/B-GC_eo1Ec0" target="_blank" rel="noopener">↗ Watch episode</a>
+        </div>
+        <div class="card">
+          <div class="name">The Impact of Governance & Compliance<span class="en">أثر الحوكمة والالتزام · Riyadh Chamber</span></div>
+          <div class="tags"><span class="tag new">🆕 New</span><span class="tag msa">MSA</span><span class="tag free">Free</span></div>
+          <div class="date"><b>🎬 Talk:</b> featuring Waleed Yassin</div>
+          <div class="desc">A Riyadh Chamber session on how governance and compliance impact an organization's performance, featuring Waleed Yassin.</div>
+          <div class="why"><b>Why:</b> The Riyadh Chamber channel is a steady knowledge source on governance, risk, and compliance content.</div>
+          <a class="go" href="https://youtu.be/twUxMAP8M1A" target="_blank" rel="noopener">↗ Watch talk</a>
+          <div class="subs"><a href="https://www.youtube.com/@RiyadhChamber" target="_blank" rel="noopener">↗ Riyadh Chamber channel</a></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="caveats">
+      <h2>⚠️ Important notes before you start</h2>
+      <ul>
+        <li><b>MSA vs colloquial:</b> Dictionaries, government courses, and written content = MSA. Podcasts = colloquial. Use dictionaries to fix the term, podcasts for practical grasp.</li>
+        <li><b>SAFE & cap-table gap:</b> No verified free Arabic source defines the SAFE instrument or detailed cap-table mechanics in MSA — the closest is the Google Sheets from Khedr W Business.</li>
+        <li><b>SaaS concepts:</b> Terms like MRR/ARR, churn, LTV/CAC are only lightly covered. MOOC "Technology" categories lean toward programming, not business models.</li>
+        <li><b>Geographic skew:</b> The vetted set is Saudi/Jordanian. The Egyptian section (Maharat, NilePreneurs, Business بالعربى, Khamsa) is verified live but outside the original adversarial verification.</li>
+      </ul>
+    </div>
+
+    <div class="tips">
+      <h2>Quick usage plan</h2>
+      <ol>
+        <li><b>Foundation:</b> Keep the MOF dictionary or Thameen open beside you — for each new term, fix its pronunciation and English equivalent immediately.</li>
+        <li><b>Funding & valuation:</b> Listen to the two Khedr W Business episodes, download both Sheets, and plug your own numbers in.</li>
+        <li><b>Structure:</b> Take the "Financial Management" track at Monsha'at for investor attraction and feasibility studies with a certificate.</li>
+        <li><b>Bridge to English:</b> Learn the Arabic term + its English equivalent together — Thameen and the MOF dictionary give you both.</li>
+      </ol>
+    </div>
+  </div>
+
+  <footer>
+    <span>Devya · Free learning resources · Verified via multi-source research — 24 Jul 2026 · Governance & McKinsey Forward added 4 Aug 2026</span>
+    <span><a href="https://devya.dev" target="_blank" rel="noopener">devya.dev</a> · contact@devya.dev</span>
+  </footer>
+
+</div>
+
+<script>
+  var filterState = { type:'all', lang:'all' };
+
+  function currentLang(){ return document.body.classList.contains('lang-en') ? 'en' : 'ar'; }
+
+  function syncFilterButtons(){
+    document.querySelectorAll('.fbtn').forEach(function(b){
+      b.classList.toggle('active', filterState[b.dataset.f] === b.dataset.v);
+    });
+  }
+
+  function applyFilters(){
+    var view = document.querySelector('[data-view="'+currentLang()+'"]');
+    if(!view) return;
+    view.querySelectorAll('section[data-type]').forEach(function(sec){
+      if(filterState.type !== 'all' && sec.dataset.type !== filterState.type){
+        sec.style.display = 'none'; return;
+      }
+      var anyVisible = false;
+      sec.querySelectorAll('.card').forEach(function(card){
+        var match = filterState.lang === 'all'
+          || (filterState.lang === 'msa' && card.querySelector('.tag.msa'))
+          || (filterState.lang === 'colloquial' && card.querySelector('.tag.amiya'));
+        card.style.display = match ? '' : 'none';
+        if(match) anyVisible = true;
+      });
+      sec.style.display = anyVisible ? '' : 'none';
+    });
+  }
+
+  document.querySelectorAll('.fbtn').forEach(function(b){
+    b.addEventListener('click', function(){
+      filterState[b.dataset.f] = b.dataset.v;
+      syncFilterButtons();
+      applyFilters();
+    });
+  });
+
+  function setLang(l){
+    document.body.classList.toggle('lang-ar', l==='ar');
+    document.body.classList.toggle('lang-en', l==='en');
+    document.documentElement.lang = l;
+    document.documentElement.dir = (l==='ar') ? 'rtl' : 'ltr';
+    document.querySelectorAll('.langbtn').forEach(function(b){
+      b.classList.toggle('active', b.dataset.lang===l);
+    });
+    try{ localStorage.setItem('devya-res-lang', l); }catch(e){}
+    syncFilterButtons();
+    applyFilters();
+  }
+  (function(){
+    var saved='ar';
+    try{ saved = localStorage.getItem('devya-res-lang') || 'ar'; }catch(e){}
+    setLang(saved);
+  })();
+</script>
+</body>
+</html>
